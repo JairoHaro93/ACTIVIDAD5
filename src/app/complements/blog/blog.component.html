@@ -1,0 +1,45 @@
+<div class="flex">
+  <aside class="formulario">
+    <h1 class="formulario__titulo">INGRESO DE NOTICIAS</h1>
+    <div class="flex__card">
+      <input
+        class="flex__card-input-texto"
+        id="titulo"
+        type="text"
+        placeholder="Ingrese el título de la noticia"
+        [(ngModel)]="newNoticia.title"
+      />
+    </div>
+    <div class="flex__card">
+      <input
+        class="flex__card-input-texto"
+        id="url"
+        type="url"
+        placeholder="Ingrese el url de imagen de la noticia"
+        [(ngModel)]="newNoticia.url"
+      />
+    </div>
+    <div class="flex__card">
+      <label for="fecha">Fecha de publicación:</label>
+      <input id="fecha" type="date" [(ngModel)]="newNoticia.date" />
+    </div>
+    <div>
+      <label>Cuerpo de noticia:</label>
+      <textarea
+        name="comentarios"
+        rows="10"
+        cols="40"
+        [(ngModel)]="newNoticia.content"
+      >
+      </textarea>
+    </div>
+    <button class="formmulario__boton-guardar" (click)="guardarNoticias()">
+      Guardar Noticia
+    </button>
+  </aside>
+  <section>
+    <h1>NOTICIAS</h1>
+
+    <div [innerHTML]="cargarNoticias()"></div>
+  </section>
+</div>
